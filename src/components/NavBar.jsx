@@ -13,6 +13,9 @@ const NavBar = () => {
                 <li>
                     <Link to='/pokemon/profile'>Pokemon Profiles</Link>
                 </li>
+                <li>
+                    <Link to='/pokemon/new'> New Pokemon form</Link>
+                </li>
             </ul>
         </nav>
     );
