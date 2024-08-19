@@ -8,7 +8,7 @@ const PokemonDetail = ({ pokemonStats }) => {
     useEffect(() => {
         const foundPokemon = pokemonStats.find(p => p.name === name);
         setPokemon(foundPokemon);
-    }, [name, pokemonStats]);  // Dependencies ensure useEffect runs when name or pokemonStats change
+    }, [name, pokemonStats]); 
 
     if (!pokemon) {
         return <h2>Pokemon not found!</h2>;
