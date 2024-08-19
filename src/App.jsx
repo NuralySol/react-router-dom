@@ -2,6 +2,7 @@ import { useState } from 'react';
 import PokemonList from './components/PokemonList';
 import NavBar from './components/NavBar';
 import { Route, Routes } from 'react-router-dom';
+import PokemonDetail from './components/PokemonDetail';
 import './App.css';
 
 const initialState = [
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/" element={<h2>Welcome to the Home Page</h2>} />
         <Route path="/pokemon" element={<PokemonList pokemon={pokemon} />} />
         <Route path="/pokemon/profile" element={<PokemonList pokemonStats={pokemonStats} />} />
+        <Route path="/pokemon/:name" element={<PokemonDetail pokemonStats={initialState} />} />
       </Routes>
     </>
   );
