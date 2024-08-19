@@ -1,8 +1,11 @@
+
 import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+
 import PokemonList from './components/PokemonList';
 import NavBar from './components/NavBar';
-import { Route, Routes } from 'react-router-dom';
 import PokemonDetail from './components/PokemonDetail';
+
 import './App.css';
 
 const initialState = [
