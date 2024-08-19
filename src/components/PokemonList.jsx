@@ -1,8 +1,17 @@
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const PokemonList = ({ pokemon, pokemonStats }) => {
-    const data = pokemon || pokemonStats;
-    const showDetails = !!pokemonStats;  // This will be true if pokemonStats is passed
+    // Using state to store the data
+    const [data, setData] = useState([]);
+    const [showDetails, setShowDetails] = useState(false);
+
+    // Using useEffect to set the data when component mounts or props change
+    useEffect(() => {
+        const selectedData = pokemon || pokemonStats;
+        setData(selectedData);
+        setShowDetails(!!pokemonStats);  // Set showDetails based on the presence of pokemonStats
+    }, [pokemon, pokemonStats]); // Dependencies: re-run effect if these change
 
     return (
         <div>
