@@ -1,13 +1,24 @@
-const PokemonList = (props) => {
+const PokemonList = ({ pokemon, pokemonStats }) => {
+    const data = pokemon || pokemonStats;
+    const showDetails = !!pokemonStats;  
+
     return (
-        <>
-            <h2>Pokemon</h2>
+        <div>
+            <h2>Pokemon List</h2>
             <ul>
-                {props.pokemon.map((currentPokemon) => (
-                    <li key={currentPokemon.name}>{currentPokemon.name}</li>
+                {data.map((pokes) => (
+                    <li key={pokes._id}>
+                        <h3>{pokes.name}</h3>
+                        {showDetails && (
+                            <>
+                                <p>Weight: {pokes.weight}</p>
+                                <p>Height: {pokes.height}</p>
+                            </>
+                        )}
+                    </li>
                 ))}
             </ul>
-        </>
+        </div>
     );
 };
 
